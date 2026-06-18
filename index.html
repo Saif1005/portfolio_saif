@@ -10,477 +10,453 @@
   <title>Saif Akkari | AI Deployment Strategist</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='none' stroke='%2300e5c7' stroke-width='8'/><circle cx='50' cy='50' r='12' fill='%2300e5c7'/></svg>">
 </head>
 <body>
-  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
   <nav class="nav" id="nav">
     <div class="nav__inner">
-      <a href="#hero" class="nav__logo">SA</a>
+      <a href="#hero" class="nav__logo">
+        <span class="nav__logo-mark"></span>
+        <span>Saif<span class="accent">.</span></span>
+      </a>
       <ul class="nav__links">
-        <li><a href="#about">Profil</a></li>
-        <li><a href="#skills">Compétences</a></li>
-        <li><a href="#experience">Expérience</a></li>
-        <li><a href="#projects">Projets</a></li>
-        <li><a href="#education">Formation</a></li>
-        <li><a href="#contact" class="nav__cta">Contact</a></li>
+        <li><a href="#about" data-nav>Profil</a></li>
+        <li><a href="#skills" data-nav>Compétences</a></li>
+        <li><a href="#experience" data-nav>Expérience</a></li>
+        <li><a href="#projects" data-nav>Projets</a></li>
+        <li><a href="#contact" class="nav__cta" data-nav>Contact</a></li>
       </ul>
       <button class="nav__toggle" id="navToggle" aria-label="Menu">
-        <span></span><span></span><span></span>
+        <span></span><span></span>
       </button>
     </div>
   </nav>
 
   <main>
-    <!-- HERO -->
-    <section class="hero" id="hero">
-      <div class="hero__grid" aria-hidden="true"></div>
-      <div class="container hero__content">
-        <div class="hero__badge reveal">
-          <span class="pulse"></span>
-          Disponible pour opportunités
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <canvas id="neuralCanvas" class="hero__canvas" aria-hidden="true"></canvas>
+    <div class="hero__orb hero__orb--1" aria-hidden="true"></div>
+    <div class="hero__orb hero__orb--2" aria-hidden="true"></div>
+
+    <div class="container hero__layout">
+      <div class="hero__content">
+        <div class="hero__status reveal">
+          <span class="hero__dot"></span>
+          <span>Open to opportunities</span>
         </div>
+
         <h1 class="hero__title reveal">
-          <span class="hero__greeting">Bonjour, je suis</span>
-          <span class="hero__name">Saif Akkari</span>
+          <span class="hero__line">Saif</span>
+          <span class="hero__line hero__line--accent">Akkari</span>
         </h1>
+
         <p class="hero__role reveal">
-          <span id="typedRole"></span><span class="typed-cursor">|</span>
+          <span id="typedRole"></span><span class="cursor-blink">_</span>
         </p>
-        <p class="hero__tagline reveal">
-          Je conçois des architectures d'IA agentique et des systèmes multi-agents centralisés
-          pour automatiser les chaînes de production industrielles et connecter les systèmes legacy aux technologies modernes.
+
+        <p class="hero__desc reveal">
+          Je conçois des architectures d'<strong>IA agentique</strong> et des
+          <strong>systèmes multi-agents</strong> pour automatiser les chaînes de production
+          industrielles — du legacy ERP à la décision en temps réel.
         </p>
+
         <div class="hero__actions reveal">
-          <a href="#projects" class="btn btn--primary">Voir mes projets</a>
-          <a href="laste_version_resume_pro-1-1.pdf" class="btn btn--ghost" download>Télécharger le CV</a>
+          <a href="#projects" class="btn btn--primary">
+            <span>Explorer mes projets</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="laste_version_resume_pro-1-1.pdf" class="btn btn--outline" download>CV PDF</a>
         </div>
-        <div class="hero__stats reveal">
-          <div class="stat">
-            <span class="stat__value">3+</span>
-            <span class="stat__label">Stages & missions</span>
-          </div>
-          <div class="stat">
-            <span class="stat__value">MAS</span>
-            <span class="stat__label">Expertise clé</span>
-          </div>
-          <div class="stat">
-            <span class="stat__value">M.S.</span>
-            <span class="stat__label">Data Science ISIMM</span>
-          </div>
-        </div>
-      </div>
-      <div class="hero__scroll reveal">
-        <span>Défiler</span>
-        <div class="hero__scroll-line"></div>
-      </div>
-    </section>
 
-    <!-- ABOUT -->
-    <section class="section" id="about">
-      <div class="container">
-        <header class="section__header reveal">
-          <span class="section__tag">01 — Profil</span>
-          <h2 class="section__title">À propos de moi</h2>
-        </header>
-        <div class="about__grid">
-          <div class="about__text reveal">
-            <p class="lead">
-              <strong>AI Deployment Strategist</strong> et <strong>Data Scientist</strong> orienté résultats,
-              spécialisé dans l'<em>Intelligence Industrielle</em>.
-            </p>
-            <p>
-              Expert dans la conception de <strong>Systèmes Multi-Agents Centralisés (MAS)</strong> intégrés
-              aux couches ERP pour automatiser les chaînes de production. Je comble le fossé entre
-              les systèmes industriels legacy et l'IA agentique moderne pour optimiser l'efficacité
-              opérationnelle et la prise de décision en temps réel.
-            </p>
-            <p>
-              Mon approche combine rigueur scientifique, architecture logicielle robuste et déploiement
-              MLOps en production — de la recherche à l'industrialisation.
-            </p>
+        <div class="hero__social reveal">
+          <a href="https://github.com/Saif1005" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/akkari-saif-3b8811238/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 114.126 0 2.063 2.063 0 01-2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="mailto:saifakkari.sa@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero__panel reveal">
+        <div class="hero__panel-inner">
+          <div class="metric">
+            <span class="metric__val" data-count="3">0</span><span class="metric__plus">+</span>
+            <span class="metric__lbl">Missions</span>
           </div>
-          <div class="about__cards reveal">
-            <div class="info-card">
-              <span class="info-card__icon">📍</span>
-              <div>
-                <h3>Localisation</h3>
-                <p>Tunisie</p>
-              </div>
-            </div>
-            <div class="info-card">
-              <span class="info-card__icon">🎓</span>
-              <div>
-                <h3>Formation</h3>
-                <p>M.S. Data Science — ISIMM</p>
-              </div>
-            </div>
-            <div class="info-card">
-              <span class="info-card__icon">🌐</span>
-              <div>
-                <h3>Langues</h3>
-                <p>Arabe · Français · Anglais</p>
-              </div>
-            </div>
-            <div class="info-card">
-              <span class="info-card__icon">⚙️</span>
-              <div>
-                <h3>Domaine</h3>
-                <p>IA Industrielle & MLOps</p>
-              </div>
-            </div>
+          <div class="metric">
+            <span class="metric__val">MAS</span>
+            <span class="metric__lbl">Expertise</span>
+          </div>
+          <div class="metric">
+            <span class="metric__val">M.S.</span>
+            <span class="metric__lbl">Data Science</span>
+          </div>
+          <div class="hero__code">
+            <code>
+              <span class="code-kw">class</span> <span class="code-type">AgentOrchestrator</span>:<br>
+              &nbsp;&nbsp;<span class="code-kw">def</span> deploy(<span class="code-var">self</span>, erp):<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-kw">return</span> <span class="code-fn">MAS</span>(agents=<span class="code-str">"industrial"</span>)
+            </code>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SKILLS -->
-    <section class="section section--dark" id="skills">
-      <div class="container">
-        <header class="section__header reveal">
-          <span class="section__tag">02 — Compétences</span>
-          <h2 class="section__title">Stack technique complète</h2>
-        </header>
-        <div class="skills__grid">
-          <article class="skill-category reveal">
-            <div class="skill-category__header">
-              <span class="skill-category__icon">🧠</span>
-              <h3>Architectures IA</h3>
-            </div>
-            <ul class="skill-tags">
-              <li>Centralized Multi-Agent Systems (MAS)</li>
-              <li>Agentic AI</li>
-              <li>RAG Multimodal</li>
-              <li>LLMs (GPT-4, LLaMA 2)</li>
-              <li>Orchestrator Agents</li>
-              <li>LangChain</li>
-              <li>Hugging Face</li>
-              <li>Federated Learning</li>
-              <li>Model Context Protocol (MCP)</li>
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Multi-Agent Systems</span><span class="marquee__dot">◆</span>
+      <span>Agentic AI</span><span class="marquee__dot">◆</span>
+      <span>RAG Multimodal</span><span class="marquee__dot">◆</span>
+      <span>MLOps</span><span class="marquee__dot">◆</span>
+      <span>ERP Integration</span><span class="marquee__dot">◆</span>
+      <span>Federated Learning</span><span class="marquee__dot">◆</span>
+      <span>LLaMA 2</span><span class="marquee__dot">◆</span>
+      <span>Python</span><span class="marquee__dot">◆</span>
+      <span>Multi-Agent Systems</span><span class="marquee__dot">◆</span>
+      <span>Agentic AI</span><span class="marquee__dot">◆</span>
+      <span>RAG Multimodal</span><span class="marquee__dot">◆</span>
+      <span>MLOps</span><span class="marquee__dot">◆</span>
+      <span>ERP Integration</span><span class="marquee__dot">◆</span>
+      <span>Federated Learning</span><span class="marquee__dot">◆</span>
+      <span>LLaMA 2</span><span class="marquee__dot">◆</span>
+      <span>Python</span><span class="marquee__dot">◆</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-num">01</span>
+        <div>
+          <p class="section-eyebrow">Profil</p>
+          <h2 class="section-title">Bridging legacy<br><em>to intelligence</em></h2>
+        </div>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p class="about-lead">
+            <strong>AI Deployment Strategist</strong> & <strong>Data Scientist</strong>
+            spécialisé dans l'intelligence industrielle.
+          </p>
+          <p>
+            Expert en <strong>Systèmes Multi-Agents Centralisés (MAS)</strong> intégrés aux couches ERP.
+            Je transforme les systèmes industriels legacy en écosystèmes intelligents capables de
+            décisions autonomes en temps réel.
+          </p>
+          <p>
+            De la recherche académique au déploiement MLOps en production — rigueur scientifique,
+            architecture robuste, impact mesurable.
+          </p>
+        </div>
+
+        <div class="about-cards">
+          <div class="bento-card bento-card--accent reveal" data-tilt>
+            <span class="bento-card__icon">📍</span>
+            <h3>Tunisie</h3>
+            <p>Basé en Tunisie, ouvert au remote</p>
+          </div>
+          <div class="bento-card reveal" data-tilt>
+            <span class="bento-card__icon">🎓</span>
+            <h3>M.S. Data Science</h3>
+            <p>ISIMM — Monastir</p>
+          </div>
+          <div class="bento-card reveal" data-tilt>
+            <span class="bento-card__icon">🌐</span>
+            <h3>Ar · Fr · En</h3>
+            <p>Arabe natif, Français courant, Anglais pro</p>
+          </div>
+          <div class="bento-card reveal" data-tilt>
+            <span class="bento-card__icon">⚡</span>
+            <h3>IA Industrielle</h3>
+            <p>MAS · ERP · MLOps · Agentic AI</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section section--alt" id="skills">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-num">02</span>
+        <div>
+          <p class="section-eyebrow">Compétences</p>
+          <h2 class="section-title">Stack technique<br><em>complète</em></h2>
+        </div>
+      </div>
+
+      <div class="skills-bento">
+        <article class="skill-block skill-block--large reveal" data-tilt>
+          <div class="skill-block__head">
+            <span class="skill-block__num">01</span>
+            <h3>Architectures IA</h3>
+          </div>
+          <div class="skill-pills">
+            <span>Centralized MAS</span><span>Agentic AI</span><span>RAG Multimodal</span>
+            <span>LLMs (GPT-4, LLaMA 2)</span><span>Orchestrator Agents</span>
+            <span>LangChain</span><span>Hugging Face</span><span>Federated Learning</span><span>MCP</span>
+          </div>
+        </article>
+
+        <article class="skill-block reveal" data-tilt>
+          <div class="skill-block__head">
+            <span class="skill-block__num">02</span>
+            <h3>Industrie</h3>
+          </div>
+          <div class="skill-pills">
+            <span>ERP Integration</span><span>Production Automation</span>
+            <span>Industrial IoT</span><span>Workflow Optimization</span>
+            <span>Resource Allocation</span>
+          </div>
+        </article>
+
+        <article class="skill-block reveal" data-tilt>
+          <div class="skill-block__head">
+            <span class="skill-block__num">03</span>
+            <h3>MLOps</h3>
+          </div>
+          <div class="skill-pills">
+            <span>Python</span><span>Docker</span><span>Airflow</span>
+            <span>GitHub Actions</span><span>CI/CD</span><span>AWS</span><span>gRPC</span>
+          </div>
+        </article>
+
+        <article class="skill-block skill-block--wide reveal" data-tilt>
+          <div class="skill-block__head">
+            <span class="skill-block__num">04</span>
+            <h3>Data Science</h3>
+          </div>
+          <div class="skill-pills">
+            <span>SQL</span><span>PyTorch</span><span>Scikit-learn</span>
+            <span>Pandas</span><span>ChromaDB</span><span>Tableau</span><span>Vector DBs</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section" id="experience">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-num">03</span>
+        <div>
+          <p class="section-eyebrow">Expérience</p>
+          <h2 class="section-title">Parcours<br><em>professionnel</em></h2>
+        </div>
+      </div>
+
+      <div class="exp-list">
+        <article class="exp-card reveal" data-tilt>
+          <div class="exp-card__side">
+            <time>Nov 2025 — Juil 2026</time>
+            <span class="badge badge--live">En cours</span>
+          </div>
+          <div class="exp-card__body">
+            <h3>AI & MAS Engineering Intern</h3>
+            <p class="exp-card__co">Sotipapier Tunisia</p>
+            <ul>
+              <li>Développement d'un <strong>MAS centralisé</strong> pour automatiser les chaînes de production industrielles.</li>
+              <li>Architecture d'une couche d'intégration intelligente sous le système ERP.</li>
+              <li>Coordination agentique pour allocation des ressources et planification en temps réel.</li>
+              <li>Optimisation des workflows via agents de décision automatisée.</li>
             </ul>
-          </article>
-          <article class="skill-category reveal">
-            <div class="skill-category__header">
-              <span class="skill-category__icon">🏭</span>
-              <h3>Intégration Industrielle</h3>
-            </div>
-            <ul class="skill-tags">
-              <li>ERP Integration Layers</li>
-              <li>Production Chain Automation</li>
-              <li>Industrial IoT</li>
-              <li>Workflow Optimization</li>
-              <li>Resource Allocation</li>
-              <li>Production Scheduling</li>
+            <div class="tags"><span>MAS</span><span>ERP</span><span>Agentic AI</span><span>Python</span></div>
+          </div>
+        </article>
+
+        <article class="exp-card reveal" data-tilt>
+          <div class="exp-card__side">
+            <time>Juil — Sep 2025</time>
+          </div>
+          <div class="exp-card__body">
+            <h3>Research Intern</h3>
+            <p class="exp-card__co">REDCAD Laboratory — Sfax</p>
+            <ul>
+              <li>Recherche <strong>Federated Learning</strong> et workflows via <strong>MCP</strong>.</li>
+              <li>Développement de <strong>ActiveAvance</strong> — défense contre le gradient poisoning.</li>
             </ul>
-          </article>
-          <article class="skill-category reveal">
-            <div class="skill-category__header">
-              <span class="skill-category__icon">🔧</span>
-              <h3>Engineering & MLOps</h3>
-            </div>
-            <ul class="skill-tags">
-              <li>Python</li>
-              <li>Docker</li>
-              <li>Apache Airflow</li>
-              <li>GitHub Actions</li>
-              <li>CI/CD</li>
-              <li>AWS</li>
-              <li>MLOps Orchestration</li>
-              <li>gRPC</li>
+            <div class="tags"><span>Federated Learning</span><span>MCP</span><span>Security</span><span>PyTorch</span></div>
+          </div>
+        </article>
+
+        <article class="exp-card reveal" data-tilt>
+          <div class="exp-card__side">
+            <time>Mar — Juil 2025</time>
+          </div>
+          <div class="exp-card__body">
+            <h3>Data Scientist Intern</h3>
+            <p class="exp-card__co">ONRTECHE Tunisia</p>
+            <ul>
+              <li>Agent <strong>RAG Multimodal</strong> pour documentation technique (texte + images).</li>
+              <li>Optimisation retrieval via <strong>ChromaDB</strong> et <strong>GPT-4</strong>.</li>
             </ul>
-          </article>
-          <article class="skill-category reveal">
-            <div class="skill-category__header">
-              <span class="skill-category__icon">📊</span>
-              <h3>Data Science</h3>
-            </div>
-            <ul class="skill-tags">
-              <li>SQL</li>
-              <li>PyTorch</li>
-              <li>Scikit-learn</li>
-              <li>Pandas</li>
-              <li>ChromaDB</li>
-              <li>Tableau</li>
-              <li>Vector Databases</li>
-            </ul>
-          </article>
+            <div class="tags"><span>RAG</span><span>ChromaDB</span><span>GPT-4</span><span>LangChain</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section section--alt" id="projects">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-num">04</span>
+        <div>
+          <p class="section-eyebrow">Projets</p>
+          <h2 class="section-title">Réalisations<br><em>clés</em></h2>
         </div>
       </div>
-    </section>
 
-    <!-- EXPERIENCE -->
-    <section class="section" id="experience">
-      <div class="container">
-        <header class="section__header reveal">
-          <span class="section__tag">03 — Expérience</span>
-          <h2 class="section__title">Parcours professionnel</h2>
-        </header>
-        <div class="timeline">
-          <article class="timeline__item reveal">
-            <div class="timeline__marker"></div>
-            <div class="timeline__card">
-              <div class="timeline__meta">
-                <time datetime="2025-11">Nov 2025 — Juil 2026</time>
-                <span class="timeline__badge timeline__badge--current">En cours</span>
-              </div>
-              <h3>AI & MAS Engineering Intern</h3>
-              <p class="timeline__company">Sotipapier Tunisia</p>
-              <ul class="timeline__details">
-                <li>Conception et développement d'un <strong>Système Multi-Agents Centralisé (MAS)</strong> pour automatiser les chaînes de production industrielles complexes.</li>
-                <li>Architecture d'une couche d'intégration intelligente sous le système ERP de l'usine pour améliorer les flux de données et la logique opérationnelle.</li>
-                <li>Implémentation de la coordination agentique pour l'allocation des ressources et la planification de production en temps réel.</li>
-                <li>Optimisation des workflows de fabrication via des agents de prise de décision automatisée.</li>
-              </ul>
-              <div class="timeline__tech">
-                <span>MAS</span><span>ERP</span><span>Agentic AI</span><span>Python</span>
-              </div>
-            </div>
-          </article>
-          <article class="timeline__item reveal">
-            <div class="timeline__marker"></div>
-            <div class="timeline__card">
-              <div class="timeline__meta">
-                <time datetime="2025-07">Juil 2025 — Sep 2025</time>
-              </div>
-              <h3>Research Intern</h3>
-              <p class="timeline__company">REDCAD Laboratory — Sfax, Tunisie</p>
-              <ul class="timeline__details">
-                <li>Recherche sur le <strong>Federated Learning</strong> pour modèles décentralisés et conception de workflows via le <strong>Model Context Protocol (MCP)</strong>.</li>
-                <li>Développement de <strong>ActiveAvance</strong>, un mécanisme de défense contre l'empoisonnement de gradients dans des datasets sécurisés.</li>
-              </ul>
-              <div class="timeline__tech">
-                <span>Federated Learning</span><span>MCP</span><span>Security</span><span>PyTorch</span>
-              </div>
-            </div>
-          </article>
-          <article class="timeline__item reveal">
-            <div class="timeline__marker"></div>
-            <div class="timeline__card">
-              <div class="timeline__meta">
-                <time datetime="2025-03">Mar 2025 — Juil 2025</time>
-              </div>
-              <h3>Data Scientist Intern</h3>
-              <p class="timeline__company">ONRTECHE Tunisia</p>
-              <ul class="timeline__details">
-                <li>Développement d'un <strong>Agent RAG Multimodal</strong> pour la documentation technique, intégrant texte et imagerie pour les équipes de support.</li>
-                <li>Optimisation de la récupération de données techniques via <strong>ChromaDB</strong> et <strong>GPT-4</strong>, réduisant les temps de réponse du support.</li>
-              </ul>
-              <div class="timeline__tech">
-                <span>RAG</span><span>ChromaDB</span><span>GPT-4</span><span>LangChain</span>
-              </div>
-            </div>
-          </article>
+      <div class="projects-grid">
+        <article class="project reveal project--featured" data-tilt>
+          <div class="project__glow"></div>
+          <span class="project__idx">01</span>
+          <h3>Agentic AI — Workflows Industriels</h3>
+          <p>Architectures dynamiques avec <strong>Orchestrator Agents</strong> pour tâches inter-départementales. Coordination intelligente et allocation de ressources en temps réel sous couche ERP.</p>
+          <ul class="project__points">
+            <li>Architecture MAS centralisée</li>
+            <li>Décision agentique automatisée</li>
+            <li>Intégration ERP native</li>
+          </ul>
+          <div class="tags"><span>MAS</span><span>Orchestrator</span><span>ERP</span><span>Python</span></div>
+        </article>
+
+        <article class="project reveal" data-tilt>
+          <span class="project__idx">02</span>
+          <h3>RAG Multimodal</h3>
+          <p>Retrieval-Augmented Generation texte + imagerie. Embeddings + ChromaDB pour support technique.</p>
+          <div class="tags"><span>RAG</span><span>ChromaDB</span><span>GPT-4</span></div>
+        </article>
+
+        <article class="project reveal" data-tilt>
+          <span class="project__idx">03</span>
+          <h3>Pipeline LLaMA 2</h3>
+          <p>Fine-tuning et évaluation end-to-end via Airflow + Docker. Pipeline MLOps complet.</p>
+          <div class="tags"><span>LLaMA 2</span><span>Airflow</span><span>Docker</span></div>
+        </article>
+
+        <article class="project reveal" data-tilt>
+          <span class="project__idx">04</span>
+          <h3>ActiveAvance</h3>
+          <p>Défense contre gradient poisoning en Federated Learning. Workflows sécurisés via MCP.</p>
+          <div class="tags"><span>Federated Learning</span><span>MCP</span><span>Security</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="section" id="education">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-num">05</span>
+        <div>
+          <p class="section-eyebrow">Formation</p>
+          <h2 class="section-title">Parcours<br><em>académique</em></h2>
         </div>
       </div>
-    </section>
 
-    <!-- PROJECTS -->
-    <section class="section section--dark" id="projects">
-      <div class="container">
-        <header class="section__header reveal">
-          <span class="section__tag">04 — Projets</span>
-          <h2 class="section__title">Réalisations clés</h2>
-        </header>
-        <div class="projects__grid">
-          <article class="project-card reveal">
-            <div class="project-card__number">01</div>
-            <div class="project-card__content">
-              <h3>Agentic AI pour la Gestion de Workflows Industriels</h3>
-              <p>
-                Conception d'architectures système dynamiques utilisant des <strong>Orchestrator Agents</strong>
-                pour gérer des tâches industrielles inter-départementales. Coordination intelligente
-                des agents de décision pour l'optimisation des flux de production.
-              </p>
-              <ul class="project-card__highlights">
-                <li>Architecture MAS centralisée sous couche ERP</li>
-                <li>Allocation de ressources en temps réel</li>
-                <li>Prise de décision agentique automatisée</li>
-              </ul>
-              <div class="project-card__tech">
-                <span>MAS</span><span>Orchestrator Agents</span><span>ERP</span><span>Python</span>
-              </div>
-            </div>
-          </article>
-          <article class="project-card reveal">
-            <div class="project-card__number">02</div>
-            <div class="project-card__content">
-              <h3>Agent RAG Multimodal — Documentation Technique</h3>
-              <p>
-                Système de Retrieval-Augmented Generation traitant simultanément texte et imagerie
-                pour les équipes de support technique. Recherche sémantique optimisée via embeddings
-                et base vectorielle ChromaDB.
-              </p>
-              <ul class="project-card__highlights">
-                <li>Pipeline d'embedding multimodal</li>
-                <li>Intégration GPT-4 pour synthèse complexe</li>
-                <li>Réduction significative des temps de réponse</li>
-              </ul>
-              <div class="project-card__tech">
-                <span>RAG</span><span>ChromaDB</span><span>GPT-4</span><span>LangChain</span>
-              </div>
-            </div>
-          </article>
-          <article class="project-card reveal">
-            <div class="project-card__number">03</div>
-            <div class="project-card__content">
-              <h3>Pipeline LLM Automation — LLaMA 2</h3>
-              <p>
-                Orchestration de cycles complets de fine-tuning et d'évaluation de modèles LLaMA 2
-                via Apache Airflow et Docker. Pipeline MLOps end-to-end pour le déploiement
-                et le monitoring des modèles.
-              </p>
-              <ul class="project-card__highlights">
-                <li>Fine-tuning automatisé LLaMA 2</li>
-                <li>Orchestration Airflow + Docker</li>
-                <li>Cycles d'évaluation continus</li>
-              </ul>
-              <div class="project-card__tech">
-                <span>LLaMA 2</span><span>Airflow</span><span>Docker</span><span>MLOps</span>
-              </div>
-            </div>
-          </article>
-          <article class="project-card reveal">
-            <div class="project-card__number">04</div>
-            <div class="project-card__content">
-              <h3>ActiveAvance — Sécurité Federated Learning</h3>
-              <p>
-                Mécanisme de défense contre l'empoisonnement de gradients dans des modèles
-                de données décentralisés. Workflows sécurisés via le Model Context Protocol (MCP)
-                avec protocoles de validation stricts.
-              </p>
-              <ul class="project-card__highlights">
-                <li>Détection d'attaques par gradient poisoning</li>
-                <li>Workflows MCP pour modèles décentralisés</li>
-                <li>Sécurisation des datasets fédérés</li>
-              </ul>
-              <div class="project-card__tech">
-                <span>Federated Learning</span><span>MCP</span><span>Security</span><span>PyTorch</span>
-              </div>
-            </div>
-          </article>
-        </div>
+      <div class="edu-grid">
+        <article class="edu-card reveal" data-tilt>
+          <div class="edu-card__top">
+            <time>Sep 2024 — Présent</time>
+            <span class="badge badge--live">En cours</span>
+          </div>
+          <h3>Master Data Science</h3>
+          <p class="edu-card__school">ISIMM — Monastir</p>
+          <p>ML, Deep Learning, déploiement IA en production.</p>
+        </article>
+        <article class="edu-card reveal" data-tilt>
+          <div class="edu-card__top">
+            <time>2021 — 2024</time>
+          </div>
+          <h3>Licence Mathématiques Appliquées</h3>
+          <p class="edu-card__school">ISIMM — Monastir</p>
+          <p>Mathématiques appliquées, algorithmique, modélisation.</p>
+        </article>
       </div>
-    </section>
 
-    <!-- EDUCATION -->
-    <section class="section" id="education">
-      <div class="container">
-        <header class="section__header reveal">
-          <span class="section__tag">05 — Formation</span>
-          <h2 class="section__title">Parcours académique</h2>
-        </header>
-        <div class="education__grid">
-          <article class="edu-card reveal">
-            <div class="edu-card__period">
-              <time datetime="2024-09">Sep 2024 — Présent</time>
-              <span class="edu-card__status">En cours</span>
-            </div>
-            <h3>Master en Data Science</h3>
-            <p class="edu-card__school">Institut Supérieur d'Informatique et de Mathématiques de Monastir (ISIMM)</p>
-            <p class="edu-card__desc">
-              Formation avancée en science des données, machine learning, deep learning,
-              et déploiement de solutions IA en environnement de production.
-            </p>
-          </article>
-          <article class="edu-card reveal">
-            <div class="edu-card__period">
-              <time datetime="2021">2021 — 2024</time>
-            </div>
-            <h3>Licence en Mathématiques Appliquées à l'Informatique</h3>
-            <p class="edu-card__school">Institut Supérieur d'Informatique et de Mathématiques de Monastir (ISIMM)</p>
-            <p class="edu-card__desc">
-              Fondements solides en mathématiques appliquées, algorithmique,
-              programmation et modélisation computationnelle.
-            </p>
-          </article>
-        </div>
-
-        <div class="languages reveal">
-          <h3 class="languages__title">Langues</h3>
-          <div class="languages__grid">
-            <div class="lang-item">
-              <span class="lang-item__name">Arabe</span>
-              <div class="lang-item__bar"><div class="lang-item__fill" style="--level: 100%"></div></div>
-              <span class="lang-item__level">Natif</span>
-            </div>
-            <div class="lang-item">
-              <span class="lang-item__name">Français</span>
-              <div class="lang-item__bar"><div class="lang-item__fill" style="--level: 95%"></div></div>
-              <span class="lang-item__level">Courant</span>
-            </div>
-            <div class="lang-item">
-              <span class="lang-item__name">Anglais</span>
-              <div class="lang-item__bar"><div class="lang-item__fill" style="--level: 85%"></div></div>
-              <span class="lang-item__level">Professionnel</span>
-            </div>
+      <div class="lang-block reveal">
+        <h3>Langues</h3>
+        <div class="lang-rows">
+          <div class="lang-row">
+            <span>Arabe</span>
+            <div class="lang-bar"><div class="lang-fill" data-level="100"></div></div>
+            <span>Natif</span>
+          </div>
+          <div class="lang-row">
+            <span>Français</span>
+            <div class="lang-bar"><div class="lang-fill" data-level="95"></div></div>
+            <span>Courant</span>
+          </div>
+          <div class="lang-row">
+            <span>Anglais</span>
+            <div class="lang-bar"><div class="lang-fill" data-level="85"></div></div>
+            <span>Professionnel</span>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- CONTACT -->
-    <section class="section section--contact" id="contact">
-      <div class="container">
-        <header class="section__header reveal">
-          <span class="section__tag">06 — Contact</span>
-          <h2 class="section__title">Travaillons ensemble</h2>
-        </header>
-        <div class="contact__grid">
-          <div class="contact__intro reveal">
-            <p class="lead">
-              Vous avez un projet d'IA industrielle, un système multi-agents à déployer,
-              ou besoin d'un expert MLOps ? Je suis ouvert aux collaborations et opportunités.
-            </p>
-          </div>
-          <div class="contact__links reveal">
-            <a href="mailto:saifakkari.sa@gmail.com" class="contact-link">
-              <span class="contact-link__icon">✉️</span>
-              <div>
-                <span class="contact-link__label">Email</span>
-                <span class="contact-link__value">saifakkari.sa@gmail.com</span>
-              </div>
-            </a>
-            <a href="tel:+21625265458" class="contact-link">
-              <span class="contact-link__icon">📱</span>
-              <div>
-                <span class="contact-link__label">Téléphone</span>
-                <span class="contact-link__value">+216 25 265 458</span>
-              </div>
-            </a>
-            <a href="https://github.com/Saif1005" target="_blank" rel="noopener noreferrer" class="contact-link">
-              <span class="contact-link__icon">💻</span>
-              <div>
-                <span class="contact-link__label">GitHub</span>
-                <span class="contact-link__value">github.com/Saif1005</span>
-              </div>
-            </a>
-            <a href="https://linkedin.com/in/saif-akkari" target="_blank" rel="noopener noreferrer" class="contact-link">
-              <span class="contact-link__icon">🔗</span>
-              <div>
-                <span class="contact-link__label">LinkedIn</span>
-                <span class="contact-link__value">Profil LinkedIn</span>
-              </div>
-            </a>
-            <a href="laste_version_resume_pro-1-1.pdf" class="contact-link" download>
-              <span class="contact-link__icon">📄</span>
-              <div>
-                <span class="contact-link__label">CV</span>
-                <span class="contact-link__value">Télécharger le PDF</span>
-              </div>
-            </a>
-          </div>
+  <!-- CONTACT -->
+  <section class="section section--contact" id="contact">
+    <div class="container">
+      <div class="contact-wrap reveal">
+        <div class="contact-text">
+          <p class="section-eyebrow">Contact</p>
+          <h2 class="contact-title">Construisons<br>quelque chose<br><em>d'intelligent.</em></h2>
+          <p>Projet IA industrielle, déploiement MAS ou expertise MLOps — discutons-en.</p>
+        </div>
+        <div class="contact-links">
+          <a href="mailto:saifakkari.sa@gmail.com" class="contact-item">
+            <span class="contact-item__label">Email</span>
+            <span class="contact-item__val">saifakkari.sa@gmail.com</span>
+          </a>
+          <a href="tel:+21625265458" class="contact-item">
+            <span class="contact-item__label">Téléphone</span>
+            <span class="contact-item__val">+216 25 265 458</span>
+          </a>
+          <a href="https://www.linkedin.com/in/akkari-saif-3b8811238/" target="_blank" rel="noopener noreferrer" class="contact-item">
+            <span class="contact-item__label">LinkedIn</span>
+            <span class="contact-item__val">akkari-saif-3b8811238</span>
+          </a>
+          <a href="https://github.com/Saif1005" target="_blank" rel="noopener noreferrer" class="contact-item">
+            <span class="contact-item__label">GitHub</span>
+            <span class="contact-item__val">Saif1005</span>
+          </a>
+          <a href="laste_version_resume_pro-1-1.pdf" class="contact-item contact-item--cta" download>
+            <span class="contact-item__label">CV</span>
+            <span class="contact-item__val">Télécharger le PDF →</span>
+          </a>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
   </main>
 
   <footer class="footer">
     <div class="container footer__inner">
-      <p>&copy; 2026 Saif Akkari. Conçu avec passion pour l'IA industrielle.</p>
-      <a href="#hero" class="footer__top">↑ Haut de page</a>
+      <p>© 2026 Saif Akkari</p>
+      <p class="footer__tag">AI × Industry × Intelligence</p>
+      <a href="#hero">↑</a>
     </div>
   </footer>
 
