@@ -367,6 +367,63 @@ ul { list-style: none; }
   transform: translateY(-2px);
 }
 
+/* Hero visual + photo */
+.hero__visual {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  perspective: 1000px;
+}
+
+.hero__photo-frame {
+  position: relative;
+  padding: 3px;
+  border-radius: 24px;
+  background: var(--gradient);
+  overflow: hidden;
+  transform-style: preserve-3d;
+}
+
+.hero__photo-glow {
+  position: absolute;
+  inset: -30%;
+  background: radial-gradient(circle, var(--accent-glow), transparent 65%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero__photo {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  max-width: 380px;
+  margin-inline: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 15%;
+  border-radius: 21px;
+  background: var(--bg-alt);
+}
+
+.hero__photo-badge {
+  position: absolute;
+  z-index: 2;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.45rem 1rem;
+  background: rgba(5, 8, 16, 0.88);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-bright);
+  border-radius: 100px;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
 /* Hero panel */
 .hero__panel {
   perspective: 1000px;
@@ -527,6 +584,26 @@ ul { list-style: none; }
   gap: 3rem;
   align-items: start;
 }
+
+.about-intro {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.about-avatar {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 15%;
+  flex-shrink: 0;
+  border: 2px solid transparent;
+  background: linear-gradient(var(--bg), var(--bg)) padding-box, var(--gradient) border-box;
+  box-shadow: 0 8px 32px var(--accent-glow);
+}
+
+.about-text { flex: 1; }
 
 .about-lead {
   font-size: 1.2rem;
@@ -1046,7 +1123,7 @@ ul { list-style: none; }
 /* Responsive */
 @media (max-width: 1024px) {
   .hero__layout { grid-template-columns: 1fr; }
-  .hero__panel { max-width: 500px; }
+  .hero__visual { max-width: 420px; margin-inline: auto; width: 100%; }
   .skills-bento { grid-template-columns: 1fr 1fr; }
   .skill-block--large { grid-row: auto; }
   .skill-block--wide { grid-column: span 2; }
@@ -1091,6 +1168,8 @@ ul { list-style: none; }
   .skills-bento { grid-template-columns: 1fr; }
   .skill-block--wide { grid-column: auto; }
   .about-cards { grid-template-columns: 1fr; }
+  .about-intro { flex-direction: column; align-items: center; text-align: center; }
+  .about-avatar { width: 100px; height: 100px; }
   .section-head { flex-direction: column; gap: 0.5rem; }
   .section-num { font-size: 2.5rem; }
 }
