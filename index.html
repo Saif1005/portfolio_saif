@@ -249,10 +249,10 @@
     </div>
     <div class="container deploy-wrap">
       <div class="deploy-hero reveal">
-        <div class="deploy-hero__text">
+        <div class="deploy-hero__header">
           <p class="section-eyebrow">02 — Déploiement & Cloud</p>
           <h2 class="deploy-hero__title">
-            De la recherche<br>
+            De la recherche
             <span class="deploy-hero__accent">à la production</span>
           </h2>
           <p class="deploy-lead">
@@ -260,46 +260,62 @@
             <strong>Moi, je déploie.</strong> Pipelines MLOps complets et
             <strong>systèmes multi-agents sur le cloud</strong> — une compétence rare à forte valeur marché.
           </p>
-          <a href="https://github.com/Saif1005?tab=repositories" target="_blank" rel="noopener noreferrer" class="deploy-proof">
-            <svg class="deploy-proof__svg" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M6 10l3 3 5-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Pipelines CI/CD actifs — GitHub Actions</span>
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </a>
         </div>
 
-        <div class="deploy-hero__visual">
-          <div class="deploy-flow">
-            <div class="deploy-flow__line" aria-hidden="true"></div>
-            <div class="deploy-flow__node">
-              <span class="deploy-flow__idx">01</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0H5a2 2 0 01-2-2v-4m6 6h10a2 2 0 002-2v-4"/></svg>
-              <strong>Build</strong>
-              <span>MAS · LLMs · RAG</span>
+        <div class="deploy-console">
+          <div class="deploy-console__bar">
+            <span class="deploy-console__dot"></span>
+            <span class="deploy-console__dot"></span>
+            <span class="deploy-console__dot"></span>
+            <span class="deploy-console__title">deploy-pipeline.yml</span>
+            <span class="deploy-console__status">running</span>
+          </div>
+          <div class="deploy-console__body">
+            <div class="deploy-log">
+              <span class="deploy-log__time">00:01</span>
+              <span class="deploy-log__tag deploy-log__tag--build">BUILD</span>
+              <span class="deploy-log__msg">MAS orchestrator · compile agents</span>
+              <span class="deploy-log__state deploy-log__state--ok">passed</span>
             </div>
-            <div class="deploy-flow__node">
-              <span class="deploy-flow__idx">02</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>
-              <strong>Container</strong>
-              <span>Docker · GHCR</span>
+            <div class="deploy-log">
+              <span class="deploy-log__time">00:18</span>
+              <span class="deploy-log__tag deploy-log__tag--docker">DOCKER</span>
+              <span class="deploy-log__msg">push image → ghcr.io/saif1005/mas-orchestrator</span>
+              <span class="deploy-log__state deploy-log__state--ok">passed</span>
             </div>
-            <div class="deploy-flow__node">
-              <span class="deploy-flow__idx">03</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
-              <strong>CI/CD</strong>
-              <span>Actions · Harness</span>
+            <div class="deploy-log">
+              <span class="deploy-log__time">00:42</span>
+              <span class="deploy-log__tag deploy-log__tag--cicd">CI/CD</span>
+              <span class="deploy-log__msg">GitHub Actions · tests + lint</span>
+              <span class="deploy-log__state deploy-log__state--ok">passed</span>
             </div>
-            <div class="deploy-flow__node deploy-flow__node--active">
-              <span class="deploy-flow__idx">04</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 10h-4V6a2 2 0 00-4 0v4H6a2 2 0 000 4h4v4a2 2 0 004 0v-4h4a2 2 0 000-4z"/></svg>
-              <strong>Cloud</strong>
-              <span>AWS EC2 · MAS</span>
+            <div class="deploy-log deploy-log--active">
+              <span class="deploy-log__time">01:05</span>
+              <span class="deploy-log__tag deploy-log__tag--cloud">CLOUD</span>
+              <span class="deploy-log__msg">rsync → AWS EC2 · restart MAS services</span>
+              <span class="deploy-log__state deploy-log__state--run">deploying</span>
             </div>
-            <div class="deploy-flow__node">
-              <span class="deploy-flow__idx">05</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
-              <strong>Live</strong>
-              <span>Monitor · Scale</span>
+            <div class="deploy-log deploy-log--pending">
+              <span class="deploy-log__time">—</span>
+              <span class="deploy-log__tag deploy-log__tag--prod">PROD</span>
+              <span class="deploy-log__msg">monitoring · agents live · ERP sync</span>
+              <span class="deploy-log__state">queued</span>
             </div>
+          </div>
+          <div class="deploy-console__footer">
+            <div class="deploy-track">
+              <div class="deploy-track__fill"></div>
+              <div class="deploy-track__nodes">
+                <span class="deploy-track__node deploy-track__node--done"><i>01</i>Build</span>
+                <span class="deploy-track__node deploy-track__node--done"><i>02</i>Docker</span>
+                <span class="deploy-track__node deploy-track__node--done"><i>03</i>CI/CD</span>
+                <span class="deploy-track__node deploy-track__node--active"><i>04</i>Cloud</span>
+                <span class="deploy-track__node"><i>05</i>Live</span>
+              </div>
+            </div>
+            <a href="https://github.com/Saif1005?tab=repositories" target="_blank" rel="noopener noreferrer" class="deploy-proof">
+              Voir les pipelines GitHub Actions →
+            </a>
           </div>
         </div>
       </div>
