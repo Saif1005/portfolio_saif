@@ -1026,14 +1026,19 @@ ul { list-style: none; }
 
 .footer a:hover { opacity: 0.7; }
 
-/* Reveal */
+/* Reveal — visible by default; hidden only when JS loads */
 .reveal {
-  opacity: 0;
-  transform: translateY(28px);
+  opacity: 1;
+  transform: none;
   transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
 }
 
-.reveal.visible {
+.js .reveal {
+  opacity: 0;
+  transform: translateY(28px);
+}
+
+.js .reveal.visible {
   opacity: 1;
   transform: translateY(0);
 }
