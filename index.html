@@ -217,22 +217,22 @@
 
         <div class="about-cards">
           <div class="bento-card bento-card--accent reveal" data-tilt>
-            <span class="bento-card__icon">🚀</span>
+            <span class="bento-card__label">01</span>
             <h3>MLOps & Cloud</h3>
             <p>CI/CD · AWS EC2 · Docker · GHCR</p>
           </div>
           <div class="bento-card reveal" data-tilt>
-            <span class="bento-card__icon">🎓</span>
+            <span class="bento-card__label">02</span>
             <h3>M.S. Data Science</h3>
             <p>ISIMM — Monastir</p>
           </div>
           <div class="bento-card reveal" data-tilt>
-            <span class="bento-card__icon">🌐</span>
+            <span class="bento-card__label">03</span>
             <h3>Ar · Fr · En</h3>
             <p>Arabe natif, Français courant, Anglais pro</p>
           </div>
           <div class="bento-card reveal" data-tilt>
-            <span class="bento-card__icon">⚡</span>
+            <span class="bento-card__label">04</span>
             <h3>IA Industrielle</h3>
             <p>MAS · ERP · MLOps · Agentic AI</p>
           </div>
@@ -243,140 +243,128 @@
 
   <!-- DEPLOYMENT -->
   <section class="section section--deploy" id="deployment">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="section-num">02</span>
-        <div>
-          <p class="section-eyebrow">Déploiement & Cloud</p>
-          <h2 class="section-title">De la recherche<br><em>à la production</em></h2>
+    <div class="deploy-bg" aria-hidden="true">
+      <div class="deploy-bg__grid"></div>
+      <div class="deploy-bg__glow"></div>
+    </div>
+    <div class="container deploy-wrap">
+      <div class="deploy-hero reveal">
+        <div class="deploy-hero__text">
+          <p class="section-eyebrow">02 — Déploiement & Cloud</p>
+          <h2 class="deploy-hero__title">
+            De la recherche<br>
+            <span class="deploy-hero__accent">à la production</span>
+          </h2>
+          <p class="deploy-lead">
+            La majorité des profils IA s'arrêtent au notebook.
+            <strong>Moi, je déploie.</strong> Pipelines MLOps complets et
+            <strong>systèmes multi-agents sur le cloud</strong> — une compétence rare à forte valeur marché.
+          </p>
+          <a href="https://github.com/Saif1005?tab=repositories" target="_blank" rel="noopener noreferrer" class="deploy-proof">
+            <svg class="deploy-proof__svg" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M6 10l3 3 5-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Pipelines CI/CD actifs — GitHub Actions</span>
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </a>
+        </div>
+
+        <div class="deploy-hero__visual">
+          <div class="deploy-flow">
+            <div class="deploy-flow__line" aria-hidden="true"></div>
+            <div class="deploy-flow__node">
+              <span class="deploy-flow__idx">01</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0H5a2 2 0 01-2-2v-4m6 6h10a2 2 0 002-2v-4"/></svg>
+              <strong>Build</strong>
+              <span>MAS · LLMs · RAG</span>
+            </div>
+            <div class="deploy-flow__node">
+              <span class="deploy-flow__idx">02</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>
+              <strong>Container</strong>
+              <span>Docker · GHCR</span>
+            </div>
+            <div class="deploy-flow__node">
+              <span class="deploy-flow__idx">03</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+              <strong>CI/CD</strong>
+              <span>Actions · Harness</span>
+            </div>
+            <div class="deploy-flow__node deploy-flow__node--active">
+              <span class="deploy-flow__idx">04</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 10h-4V6a2 2 0 00-4 0v4H6a2 2 0 000 4h4v4a2 2 0 004 0v-4h4a2 2 0 000-4z"/></svg>
+              <strong>Cloud</strong>
+              <span>AWS EC2 · MAS</span>
+            </div>
+            <div class="deploy-flow__node">
+              <span class="deploy-flow__idx">05</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
+              <strong>Live</strong>
+              <span>Monitor · Scale</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="deploy-intro reveal">
-        <p class="deploy-lead">
-          La majorité des profils IA s'arrêtent au notebook. <strong>Moi, je déploie.</strong>
-          J'orchestrate des pipelines MLOps complets et je mets en production des
-          <strong>systèmes multi-agents sur le cloud</strong> — une compétence à forte valeur sur le marché.
-        </p>
-        <a href="https://github.com/Saif1005?tab=repositories" target="_blank" rel="noopener noreferrer" class="deploy-proof">
-          <span class="deploy-proof__icon">✓</span>
-          <span>Pipelines CI/CD actifs sur GitHub Actions</span>
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </a>
-      </div>
-
-      <div class="deploy-pipeline reveal" aria-label="Pipeline de déploiement">
-        <div class="pipeline-step">
-          <span class="pipeline-step__num">01</span>
-          <span class="pipeline-step__icon">🧪</span>
-          <h4>Research & Build</h4>
-          <p>MAS, LLMs, RAG — architecture & prototypage</p>
-        </div>
-        <div class="pipeline-arrow" aria-hidden="true">→</div>
-        <div class="pipeline-step">
-          <span class="pipeline-step__num">02</span>
-          <span class="pipeline-step__icon">📦</span>
-          <h4>Containerize</h4>
-          <p>Docker, images GHCR, monorepo structuré</p>
-        </div>
-        <div class="pipeline-arrow" aria-hidden="true">→</div>
-        <div class="pipeline-step">
-          <span class="pipeline-step__num">03</span>
-          <span class="pipeline-step__icon">⚙️</span>
-          <h4>CI/CD</h4>
-          <p>GitHub Actions, Harness, tests automatisés</p>
-        </div>
-        <div class="pipeline-arrow" aria-hidden="true">→</div>
-        <div class="pipeline-step pipeline-step--highlight">
-          <span class="pipeline-step__num">04</span>
-          <span class="pipeline-step__icon">☁️</span>
-          <h4>Cloud Deploy</h4>
-          <p>AWS EC2, orchestrateur MAS en production</p>
-        </div>
-        <div class="pipeline-arrow" aria-hidden="true">→</div>
-        <div class="pipeline-step">
-          <span class="pipeline-step__num">05</span>
-          <span class="pipeline-step__icon">📈</span>
-          <h4>Production</h4>
-          <p>Monitoring, scalabilité, décision temps réel</p>
-        </div>
-      </div>
-
-      <div class="deploy-grid">
-        <article class="deploy-card reveal" data-tilt>
-          <div class="deploy-card__head">
-            <span class="deploy-card__icon">🔄</span>
-            <h3>Pipelines MLOps</h3>
+      <div class="deploy-cards">
+        <article class="deploy-card deploy-card--hero reveal">
+          <div class="deploy-card__label">Compétence différenciante</div>
+          <h3>Déploiement de systèmes multi-agents sur le cloud</h3>
+          <p>
+            Architecture monorepo, orchestrateur containerisé, agents de décision et intégration ERP
+            déployés en production sur AWS — de l'architecture à l'exploitation.
+          </p>
+          <div class="deploy-card__cols">
+            <ul>
+              <li>Monorepo backend / frontend / deploy</li>
+              <li>Orchestrateur MAS en conteneurs Docker</li>
+              <li>Coordination agentique temps réel sur EC2</li>
+            </ul>
+            <ul>
+              <li>Intégration couche ERP industrielle</li>
+              <li>Communication inter-services via gRPC</li>
+              <li>Scalabilité pour environnements prod</li>
+            </ul>
           </div>
-          <p>Orchestration end-to-end : fine-tuning LLaMA 2, évaluation automatisée, déploiement de modèles décisionnels via Airflow et Docker.</p>
-          <ul class="deploy-card__list">
-            <li>Cycles train / eval / deploy automatisés</li>
-            <li>Apache Airflow + conteneurisation</li>
-            <li>Monitoring des performances modèles</li>
-          </ul>
-          <div class="tags"><span>Airflow</span><span>Docker</span><span>LLaMA 2</span><span>MLOps</span></div>
-        </article>
-
-        <article class="deploy-card deploy-card--featured reveal" data-tilt>
-          <div class="deploy-card__badge">Compétence clé</div>
-          <div class="deploy-card__head">
-            <span class="deploy-card__icon">☁️</span>
-            <h3>MAS sur Cloud</h3>
-          </div>
-          <p>Déploiement de <strong>systèmes multi-agents centralisés</strong> sur infrastructure cloud — orchestrateur, agents de décision et intégration ERP en environnement de production.</p>
-          <ul class="deploy-card__list">
-            <li>Architecture monorepo (backend / frontend / deploy)</li>
-            <li>Orchestrateur multi-agents containerisé</li>
-            <li>Coordination agentique en temps réel sur AWS</li>
-          </ul>
-          <div class="tags"><span>MAS</span><span>AWS EC2</span><span>gRPC</span><span>Agentic AI</span></div>
+          <div class="tags"><span>MAS</span><span>AWS EC2</span><span>Docker</span><span>gRPC</span><span>Agentic AI</span></div>
         </article>
 
         <article class="deploy-card reveal" data-tilt>
-          <div class="deploy-card__head">
-            <span class="deploy-card__icon">⚡</span>
-            <h3>CI/CD & DevOps</h3>
-          </div>
-          <p>Pipelines GitHub Actions avec déploiement automatisé sur EC2, images Docker via GHCR, et optimisation des workflows de release.</p>
-          <ul class="deploy-card__list">
-            <li>GitHub Actions — build, test, deploy</li>
-            <li>GHCR + déploiement EC2 automatisé</li>
-            <li>Harness CI pour pipelines industriels</li>
-          </ul>
-          <div class="tags"><span>GitHub Actions</span><span>GHCR</span><span>AWS</span><span>Harness</span></div>
+          <span class="deploy-card__num">01</span>
+          <h3>Pipelines MLOps</h3>
+          <p>Fine-tuning LLaMA 2, évaluation automatisée et déploiement de modèles via Airflow et Docker.</p>
+          <div class="tags"><span>Airflow</span><span>Docker</span><span>LLaMA 2</span></div>
         </article>
 
         <article class="deploy-card reveal" data-tilt>
-          <div class="deploy-card__head">
-            <span class="deploy-card__icon">🏭</span>
-            <h3>IA Industrielle</h3>
-          </div>
-          <p>Passage du POC à l'usine : déploiement de couches d'intelligence sous ERP, automatisation des chaînes de production et workflows agentiques en production.</p>
-          <ul class="deploy-card__list">
-            <li>Intégration ERP + agents de décision</li>
-            <li>Workflows de fabrication automatisés</li>
-            <li>Scalabilité pour environnements industriels</li>
-          </ul>
+          <span class="deploy-card__num">02</span>
+          <h3>CI/CD & DevOps</h3>
+          <p>GitHub Actions, images GHCR, déploiement automatisé EC2 et pipelines Harness.</p>
+          <div class="tags"><span>GitHub Actions</span><span>GHCR</span><span>Harness</span></div>
+        </article>
+
+        <article class="deploy-card reveal" data-tilt>
+          <span class="deploy-card__num">03</span>
+          <h3>IA Industrielle</h3>
+          <p>Du POC à l'usine — intelligence sous ERP, workflows agentiques en production.</p>
           <div class="tags"><span>ERP</span><span>Industrial IoT</span><span>Production</span></div>
         </article>
       </div>
 
-      <div class="deploy-stats reveal">
-        <div class="deploy-stat">
-          <span class="deploy-stat__val">End-to-End</span>
-          <span class="deploy-stat__lbl">Research → Production</span>
+      <div class="deploy-metrics reveal">
+        <div class="deploy-metric">
+          <span class="deploy-metric__val">End-to-End</span>
+          <span class="deploy-metric__lbl">Research → Production</span>
         </div>
-        <div class="deploy-stat">
-          <span class="deploy-stat__val">CI/CD</span>
-          <span class="deploy-stat__lbl">Pipelines automatisés</span>
+        <div class="deploy-metric">
+          <span class="deploy-metric__val">CI/CD</span>
+          <span class="deploy-metric__lbl">Pipelines automatisés</span>
         </div>
-        <div class="deploy-stat">
-          <span class="deploy-stat__val">AWS</span>
-          <span class="deploy-stat__lbl">Cloud production</span>
+        <div class="deploy-metric">
+          <span class="deploy-metric__val">AWS</span>
+          <span class="deploy-metric__lbl">Infrastructure cloud</span>
         </div>
-        <div class="deploy-stat">
-          <span class="deploy-stat__val">MAS</span>
-          <span class="deploy-stat__lbl">Multi-agents déployés</span>
+        <div class="deploy-metric">
+          <span class="deploy-metric__val">MAS</span>
+          <span class="deploy-metric__lbl">Multi-agents déployés</span>
         </div>
       </div>
     </div>
