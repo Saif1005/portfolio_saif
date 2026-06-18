@@ -3,9 +3,9 @@
 
   const roles = [
     'AI Deployment Strategist',
-    'Data Scientist',
-    'MAS Engineer',
-    'MLOps Specialist'
+    'MLOps & Cloud Engineer',
+    'MAS Cloud Deployer',
+    'Data Scientist'
   ];
 
   const typedEl = document.getElementById('typedRole');
